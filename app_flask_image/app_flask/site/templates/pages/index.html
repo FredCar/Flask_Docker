@@ -1,0 +1,54 @@
+{% extends "layouts/default.html" %}
+
+    {% block body %}
+        <h2>Consignes</h2>
+        <div class="row">
+            <p>Pour commencer, prenez le temps nécessaire pour lire, pour bien comprendre et pour manipuler  le notebook Intro_Flask.
+                <br>Une fois que c'est fait et que c'est clair vous pouvez attaquer la suite.
+                <br>Les questions 1, 2 et 3 reprennent exactement ce qui est fait dans le notebook donc faites l'effort de le refaire par vous-même et pas seulement copier/coller une solution.
+                <br>La question 4 consiste à modifier et adapter ce qui est fait dans la fin du notebook.
+                <br>Enfin, à partir de la question 5,y a de la nouveauté.
+                </p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("exo1") }}">Exercisse n°1</a></h3>
+                <p>Faire avec Flask une page internet sur laquelle est écrit "Hello World!".</p>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("exo2") }}">Exercisse n°2</a></h3>
+                <p>Faire avec Flask une page internet sur laquelle est écrit "Hello World!" en modifiant le style (pour cela il faut donc passer par une page html et fichier css pour le style).</p>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("exo3") }}">Exercisse n°3</a></h3>
+                <p>Faire avec Flask un site web contenant 2 pages (une page d'accueil et une seconde page) avec bien sûr la possibilité de passer de l'une à l'autre.</p>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("exo4") }}">Exercisse n°4</a></h3>
+                <p>Faire avec Flask une page /test-formulaire qui contient un formulaire permettant de rentrer le prénom, le nom, le sexe de l'utilisateur ainsi qu'un pseudo. Une fois les informations renseignées, une nouvelle page doit afficher :
+                <br>"Bonjour Mr {prénom} {nom}, votre nom d'utilisateur est {pseudo}" si c'est un homme et "Bonjour Mme..." sinon.</p>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("exo5") }}">Exercisse n°5</a></h3>
+                <p>Créer une base de données SQL contenant une table users avec comme colonnes : prenom, nom, sexe, pseudo.
+                    Modifier /test-formulaire pour que désormais à chaque fois qu'un utilisateur rentre ses informations, celles-ci soient ajoutées dans la base de donnée. Pour cela il faudra utiliser un client sql python pour se connecter à la base de donnée.</p>
+                <p>Il faudra par ailleurs gérer le cas d’un pseudo déjà existant... </p>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("exo6") }}">Exercisse n°6</a></h3>
+                <p>Faire une page /utilisateurs-inscrits qui permet de lister tous les noms d'utilisateurs présents dans la base de donnée.</p>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("exo7") }}">Exercisse n°7</a></h3>
+                <p>Faire une page avec Flask qui affiche les statistiques de base d'un dataframe que l'utilisateur aurait chargé grâce à un formulaire.</p>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("exo8") }}">Exercisse n°8</a></h3>
+                <p>Charger un modèle entrainé sur MNIST et afficher la prédiction du modèle lorsque le user charge une image via un formulaire.</p>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <h3 class="text-warning"><a class="text-warning" href="{{ url_for("corobot") }}">CoroBot</a></h3>
+                <p>Tchat Bot d'information sur le Coronaviru</p>
+            </div>
+        </div>
+    {% endblock %}

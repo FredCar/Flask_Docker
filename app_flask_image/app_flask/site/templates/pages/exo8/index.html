@@ -1,0 +1,40 @@
+{% extends "layouts/default.html" %}
+
+{% block body %}
+    <h2>Exercisse n°8</h2>
+
+    <form action="{{ url_for("exo8") }}" method=post enctype=multipart/form-data>
+        <div class="row">
+            <div class=col>
+                <label for="image">Uploadez l'image d'un chiffre à deviner</label>
+                <input type="file" class="form-control" name="image" accept="image/*">
+            </div>
+            <div class="col-sm-2">
+                <label for="vrai">Vrai valeur</label>
+                <select class="form-control" name="vrai">
+                    <option value="--">--</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+              </div>
+            <div class="col">
+                <button class="btn btn-success" type="submit">Envoyer</button>
+            </div>
+        </div>
+    </form>
+
+    <h2>==========================</h2>
+    <h2 class="{{ valid }}">Prédiction : {{ prediction }}</h2>
+    <h2>Image : <img src="{{ image }}" alt="" width="15%"></h2>
+    <h2>Vrai valeur : {{ vrai }}</h2>
+    <h2>==========================</h2>
+
+{% endblock %}

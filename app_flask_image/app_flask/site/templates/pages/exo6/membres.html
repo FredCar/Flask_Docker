@@ -1,0 +1,28 @@
+{% extends "layouts/default.html" %}
+
+    {% block body %}
+        <h2>Exercisse n°6</h2>
+        <h3>Liste des membres</h3>
+
+        <table class="table">
+            <tr>
+                <th class="text-warning" scope="col">id</th>
+                <th class="text-warning" scope="col">Nom</th>
+                <th class="text-warning" scope="col">Prenom</th>
+                <th class="text-warning" scope="col">Sexe</th>
+                <th class="text-warning" scope="col">Pseudo</th>
+            </tr>
+        {% for membre in membres %}
+            <tr>
+                <th class="text-warning" scope="row">{{ membre.id }}</th>
+                <td>{{ membre.nom }}</td>
+                <td>{{ membre.prenom }}</td>
+                <td>{{ membre.sexe }}</td>
+                <td>{{ membre.pseudo }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+
+        <h2><a href="{{ url_for("exo5") }}">Enregistrez vous !</a></h2>
+
+    {% endblock %}

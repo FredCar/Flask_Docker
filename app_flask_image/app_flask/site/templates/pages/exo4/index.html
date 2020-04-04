@@ -1,0 +1,43 @@
+{% extends "layouts/default.html" %}
+
+    {% block body %}
+        <h2>Exercisse n°4</h2>
+
+        <form action="{{ url_for("exo4_page2") }}" method="POST">
+            <div class="row">
+                <div class=col>
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" id="nom" name="nom">
+                </div>
+
+                <div class=col>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=col>
+                    <label for="sexe">Sexe</label>
+                    <select class="form-control" id="sexe" name="sexe">
+                        <option>Femme</option>
+                        <option>Homme</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div class=col>
+                    <label for="pseudo">Pseudo</label>
+                    <input type="text" class="form-control" id="pseudo" name="pseudo">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p> </p>
+                    <button class="btn btn-success" type="submit">Envoyer</button>
+                </div>
+            </div>
+        </form>
+
+    {% endblock %}

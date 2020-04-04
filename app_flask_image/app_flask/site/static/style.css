@@ -1,0 +1,63 @@
+body{
+    background-image: url("images/background_noir.png");
+    background-size: cover;
+}
+
+.container{
+    padding: 50px;
+    color: white;
+    margin-top: 0px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bolder;
+}
+
+nav{
+    margin-bottom: 20px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: black;
+}
+
+h2{
+    text-align: center;
+    margin: 40px;
+}
+
+button{
+    position: relative;
+    top: 33px;
+}
+
+form{
+    margin-bottom: 40px;
+}
+
+table tr th, table tr td{
+    color: white;
+}
+
+footer p{
+    text-align: center;
+    font-size: 80%;
+    margin: 20px;
+    margin-top: 70px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-top: 10px;
+    border-top: 1px dashed yellow;
+    color: gray;
+}
+
+/* Exercisses */
+.exo2{
+    text-align: center;
+    color: red;
+    font-size: 900%;
+    font-weight: bolder;
+}

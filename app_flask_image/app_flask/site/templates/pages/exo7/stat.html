@@ -1,0 +1,49 @@
+{% extends "layouts/default.html" %}
+
+    {% block body %}
+        <h2>Exercisse n°7</h2>
+        <h3>Analise de Dataset</h3>
+        
+        <form action="{{ url_for("exo7_analise") }}" method="POST" enctype=multipart/form-data>
+            <div class="row">
+                <div class=col>
+                    <label for="dataset">Uploadez votre Dataset au format "csv"</label>
+                    <input type="file" class="form-control" name="dataset" accept=".csv">
+                </div>
+                <div class="col">
+                    <label for="sep">Séparateur</label>
+                    <select class="form-control" name="sep">
+                        <option value=",">Virgule</option>
+                        <option value=";">Point virgule</option>
+                        <option value=" ">Espace</option>
+                        <option value="\t">Tabulation</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-success" type="submit">Envoyer</button>
+                </div>
+            </div>
+        </form>
+
+        {% if data %}
+            <h3>Statistiques du dataset "{{ name }}"</h3>
+
+            <table class="table">
+                <tr>
+                    <th class="text-warning">Variables</th>
+                    {% for tete in entete %}
+                        <th class="text-warning" scope="col">{{ tete }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in data %}
+                    <tr>
+                        <th class="text-warning" scope="row">{{ row }}</th>
+                        {% for col in data[row] %}
+                            <td>{{ data[row][col] }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+    {% endblock %}

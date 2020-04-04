@@ -1,0 +1,16 @@
+{% extends "layouts/default.html" %}
+
+    {% block body %}
+        <h2>Vos informations ont bien été enregistrées !</h2>
+
+        {% if data.sexe == "Homme" %}
+            <p>Bonjour Mr {{ data.nom }} {{ data.prenom }}, votre nom d'utilisateur est {{ data.pseudo }}</p>
+        {% elif data.sexe == "Femme" %}
+            <p>Bonjour Mme {{ data.nom }} {{ data.prenom }}, votre nom d'utilisateur est {{ data.pseudo }}</p>
+        {% elif data.sexe == "Autre" %}
+            <p>Bonjour {{ data.nom }} {{ data.prenom }}, votre nom d'utilisateur est {{ data.pseudo }}</p>
+        {% endif %}
+
+        <h3>Voir la liste des <a href="{{ url_for("exo6") }}">membres</a></h3>
+        
+    {% endblock %}
