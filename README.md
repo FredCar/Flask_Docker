@@ -29,15 +29,16 @@ Intégration d'une application Flask en conteneurs Docker
 ![Nouus aussi, on peut faire de jolis schémas !](schema.png)
 
 ## Exécution
+Toutes les commandes sont à éxécuter depuis le dossier du projet
 
 #### Création de l'image mariadb
 ```bash
-$ docker build -t maria_exo_flask .
+$ docker build -t maria_exo_flask mariadb_image/.
 ```
 
 #### Création de l'image flask
 ```bash
-$ docker build -t exo_flask .
+$ docker build -t exo_flask app_flask_image/.
 ```
 
 #### Création d'un volume
@@ -47,15 +48,33 @@ $ docker volume create --name exo_flask_db
 
 #### Création d'un résaux
 ```bash
-$ docker network create --name mon_reseau
+$ docker network create --subnet=172.19.0.0/16 mon_reseau
 ```
 
 #### Démarrage du serveur
 ```bash
-$ docker run --network mon_reseau -v "exo_flask_db:/var/lib/mysql" maria_exo_flask
+$ docker run --network mon_reseau -d --ip 172.19.0.2 -v "exo_flask_db:/var/lib/mysql" maria_exo_flask
 ```
 
 #### Démarrage du site
 ```bash
 $ docker run --network mon_reseau -p 5000:5000 exo_flask
+```
+
+# Bonus
+Grâce à **docker-compose** l'éxécution est grandement simplifiée
+
+#### Construction de l'image
+```bash
+$ docker-compose build
+```
+
+#### Démarrage
+```bash
+$ docker-compose up
+```
+
+#### Arrêt
+```bash
+$ docker-compose down
 ```

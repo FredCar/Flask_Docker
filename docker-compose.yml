@@ -1,0 +1,34 @@
+version: "3"
+
+volumes:
+  exo_flask_db:
+
+networks:
+  mon_reseau:
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
+
+services:
+  app_flask:
+    build: app_flask_image/.
+    networks:
+      - mon_reseau
+    ports:
+      - "5000:5000"
+
+  database_mariadb:
+    build: mariadb_image/.
+    networks:
+      mon_reseau:
+        ipv4_address: 172.19.0.2
+    ports:
+      - "3307:3306"
+    volumes:
+      - exo_flask_db:/var/lib/mysql
+
+
+
+
+
+

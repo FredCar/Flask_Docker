@@ -11,6 +11,6 @@ RUN pip install pybase64
 COPY app_flask/ /src/
 
 EXPOSE 5000
-EXPOSE 3306
+EXPOSE 3307
 
 CMD ["python", "/src/site/app.py"]

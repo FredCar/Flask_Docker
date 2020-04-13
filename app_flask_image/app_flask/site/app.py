@@ -71,7 +71,7 @@ def exo5_confirm():
             "pseudo" : request.form["pseudo"]}
 
     # Connection à la base de données
-    db_connect = mariadb.connect(host="172.18.0.2", user="root", password="root", database="docker_test")
+    db_connect = mariadb.connect(host="172.19.0.2", user="root", password="root", database="docker_test")
     cursor = db_connect.cursor()
 
     # Vérification des doublons
@@ -94,7 +94,7 @@ def exo5_confirm():
 @app.route("/exo6")
 def exo6():
     # Connection à la base de données
-    db_connect = mariadb.connect(host="172.18.0.2", user="root", password="root", database="docker_test")
+    db_connect = mariadb.connect(host="172.19.0.2", user="root", password="root", database="docker_test")
     cursor = db_connect.cursor()
 
     cursor.execute("SELECT * FROM users")
