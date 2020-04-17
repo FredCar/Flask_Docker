@@ -48,26 +48,21 @@ $ docker volume create --name exo_flask_db
 
 #### Création d'un résaux
 ```bash
-$ docker network create --subnet=172.19.0.0/16 mon_reseau
+$ docker network create flask_net
 ```
 
 #### Démarrage du serveur
 ```bash
-$ docker run --network mon_reseau -d --ip 172.19.0.2 -v "exo_flask_db:/var/lib/mysql" maria_exo_flask
+$ docker run --network flask_net -d -v "exo_flask_db:/var/lib/mysql" --name database_mariadb maria_exo_flask
 ```
 
 #### Démarrage du site
 ```bash
-$ docker run --network mon_reseau -p 5000:5000 exo_flask
+$ docker run --network flask_net -p 5000:5000 exo_flask
 ```
 
 # Bonus
 Grâce à **docker-compose** l'éxécution est grandement simplifiée
-
-#### Construction de l'image
-```bash
-$ docker-compose build
-```
 
 #### Démarrage
 ```bash
